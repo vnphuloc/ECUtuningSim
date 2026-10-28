@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECU Tuning Educational Simulator</title>
+    <!-- Plotly.js for 3D Surface Graphs -->
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="top-nav">
+        <div class="logo-title">ECU Tuning Edu-Sim</div>
+        <div class="tabs-container" id="tabs-container">
+            <button class="tab-btn active" data-map="inj_ve">INJ VE</button>
+            <button class="tab-btn" data-map="inj_degree">INJ degree</button>
+            <button class="tab-btn" data-map="ign_degree">IGN degree</button>
+            <button class="tab-btn" data-map="afr">Air fuel ratio</button>
+            <button class="tab-btn" data-map="ect_comp">ECT Comp</button>
+            <button class="tab-btn" data-map="map_comp">MAP Comp</button>
+        </div>
+    </header>
+
+    <main class="main-workspace">
+        <!-- 2D Data Grid Section -->
+        <section class="panel left-panel">
+            <div class="table-wrapper" id="table-wrapper">
+                <!-- Table will be dynamically generated here by tableRenderer.js -->
+                <table id="ecu-table"></table>
+            </div>
+        </section>
+
+        <!-- 3D Surface Graph Section -->
+        <section class="panel right-panel">
+            <div id="graph3d-container">
+                <!-- Plotly graph will be rendered here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Educational Click-to-Explain Modal -->
+    <div id="explanation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2 id="modal-title">Map Explanation</h2>
+            
+            <div class="modal-stats">
+                <div class="stat-box"><strong>RPM:</strong> <span id="modal-rpm">-</span></div>
+                <div class="stat-box"><strong>Load (TPS/MAP):</strong> <span id="modal-load">-</span></div>
+                <div class="stat-box"><strong>Value:</strong> <span id="modal-value">-</span></div>
+            </div>
+
+            <div class="modal-body">
+                <div class="explanation-section">
+                    <h3>[Khái niệm cơ bản]</h3>
+                    <p id="desc-concept">Loading...</p>
+                </div>
+                <div class="explanation-section">
+                    <h3>[Ý nghĩa con số tại ô này]</h3>
+                    <p id="desc-meaning">Loading...</p>
+                </div>
+                <div class="explanation-section">
+                    <h3>[Tác động khi tinh chỉnh]</h3>
+                    <p id="desc-impact">Loading...</p>
+                </div>
+                <div class="explanation-section">
+                    <h3>[Công thức / Lý thuyết liên quan]</h3>
+                    <p id="desc-theory">Loading...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Entry Point -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

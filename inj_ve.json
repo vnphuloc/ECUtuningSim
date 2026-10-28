@@ -1,0 +1,23 @@
+{
+    "mapName": "INJ VE (Hiệu suất thể tích nạp)",
+    "xAxis": [500, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000],
+    "yAxis": ["100%", "80%", "60%", "40%", "30%", "20%", "12%", "6%", "3%", "IDLE"],
+    "zData": [
+        [40, 50, 65, 75, 85, 95, 105, 108, 105, 98, 92, 85, 78],
+        [38, 48, 62, 72, 82, 92, 102, 105, 102, 96, 90, 83, 76],
+        [35, 45, 58, 68, 78, 88, 98, 100, 97, 92, 86, 80, 73],
+        [32, 40, 52, 60, 70, 80, 88, 90, 88, 85, 80, 75, 68],
+        [28, 35, 45, 52, 60, 68, 75, 78, 76, 74, 70, 65, 60],
+        [25, 30, 38, 45, 50, 58, 62, 65, 63, 62, 58, 55, 52],
+        [22, 26, 32, 38, 42, 48, 52, 55, 53, 50, 48, 45, 42],
+        [20, 24, 28, 32, 36, 40, 44, 46, 45, 42, 40, 38, 36],
+        [18, 22, 25, 28, 30, 34, 38, 40, 38, 36, 34, 32, 30],
+        [15, 18, 20, 22, 24, 26, 28, 30, 28, 26, 25, 24, 22]
+    ],
+    "explanations": {
+        "concept": "INJ VE (Volumetric Efficiency - Hiệu suất thể tích) đại diện cho khả năng 'hít thở' của động cơ. Nó là tỷ lệ phần trăm (% hoặc số định mức) giữa lượng không khí thực tế được nạp vào xi-lanh so với dung tích lý thuyết của xi-lanh ở điều kiện tiêu chuẩn. Bản đồ VE chính là mô hình toán học mô phỏng luồng khí của động cơ.",
+        "meaning": "Tại mức vòng tua {RPM} RPM và độ mở bướm ga {LOAD}, động cơ đang đạt hiệu suất nạp là {VALUE}. Dựa vào con số này, cùng với nhiệt độ khí nạp (IAT) và áp suất (MAP), ECU sẽ nội suy ra khối lượng không khí thực tế đi vào buồng đốt để tính toán thời gian mở kim phun (Base Injector Pulse Width) sao cho đạt được tỷ lệ hòa khí (AFR) mục tiêu.",
+        "impact": "Nếu bạn TĂNG con số {VALUE} này lên, ECU sẽ 'nghĩ' rằng có nhiều không khí hơn đang vào động cơ -> nó sẽ phun NHIỀU nhiên liệu hơn (làm đậm hỗn hợp - Rich). Nếu bạn GIẢM con số này xuống, ECU sẽ phun ÍT nhiên liệu hơn (làm nhạt hỗn hợp - Lean). Tinh chỉnh sai ở vùng tua cao/tải lớn có thể gây thiếu xăng, róc máy (Knock) hoặc cháy xupap.",
+        "theory": "Theo vật lý động cơ, giá trị VE thường đạt đỉnh (Max) ở dải vòng tua sinh Mô-men xoắn cực đại (Peak Torque), nơi xảy ra hiệu ứng cộng hưởng âm học của đường ống nạp giúp 'nhồi' khí vào xi-lanh tốt nhất. Công thức cốt lõi: Lượng nhiên liệu cơ bản ∝ VE × MAP / T (Định luật khí lý tưởng PV = nRT)."
+    }
+}
